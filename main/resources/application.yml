@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: two-database
+  datasource:
+    hikari:
+      primary:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:13306/signtest?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+        username: root
+        password: root
+        maximum-pool-size: 50
+        max-lifetime: 30000
+        idle-timeout: 28000
+        connection-timeout: 0
+        transaction-isolation: TRANSACTION_READ_UNCOMMITTED
+      secondary:
+        driver-class-name: org.postgresql.Driver
+        jdbc-url: jdbc:postgresql://localhost:5432/evpark
+        username: postgres
+        password: postgres
+        maximum-pool-size: 50
+        max-lifetime: 30000
+        idle-timeout: 28000
+        connection-timeout: 0
+        transaction-isolation: TRANSACTION_READ_UNCOMMITTED
